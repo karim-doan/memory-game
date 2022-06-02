@@ -1,0 +1,30 @@
+
+* {
+  padding: 0;
+  margin: 0 ;
+}
+.app {
+  min-height: 100vh;
+  background-image: url(https://guantanamocity.org/wp-content/uploads/2020/12/background-4k-cuc-dep-cho-hoc-zoom-0.jpg);
+  background-size: cover;  
+}
+header {
+  border-bottom: 5px solid black;
+  color: darkred;
+  font-size: 30px;
+  text-shadow: 2px 2px 2px 2px #dedede;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-image: url(https://dbk.vn/uploads/ckfinder/images/1-content/background-dep-25.jpg);
+  background-position: center; 
+
+  p.rule {
+    text-align: center;
+    color: rgba($color: #000000, $alpha: 0.3);
+  }
+}
+
+.title {
+  text-align: center;
+  text-shadow: 1px 1px #fff;
+}

@@ -1,0 +1,74 @@
+
+
+<div class="header">
+
+    <h1>Your Storage</h1>
+    
+    <div  (click)="toggleAnimalForm()" >
+        <span class="open-add-animal" title="Add your animal">
+            Add
+        </span> 
+
+    </div>
+    
+</div>
+
+<div class="add-animal-container" [hidden]="stateAddOptions">
+        
+    <h2> Animal Information</h2>  
+    <img 
+        src="{{picture.image}}" 
+        alt="" 
+    >
+    <h2>{{picture.name | uppercase}} </h2>  
+
+    <div class="add-animal">
+
+        <label for="new-animal">Animal name: </label>
+        <input id="new-animal" #animalName  [(ngModel)]="picture.name"/>
+        
+        <br>
+        
+        <label for="new-animal">Animal Image Url: </label>
+        <input id="new-animal" #animalUrl  [(ngModel)]="picture.image"/>
+
+        <br>
+        
+        <!-- (click) passes input value to add() and then clears the input -->
+        <button type="button" class="add-button" (click)="add({id: pictures.length,name: animalName.value, image: animalUrl.value}); animalName.value=''; animalUrl.value=''">
+            Add animal
+        </button>
+
+        <button type="button" class="add-button" (click)="toggleAnimalForm()">
+            Back
+        </button>
+
+    </div> 
+</div>
+
+<ul>
+
+    
+    <li *ngFor="let picture of pictures.reverse()">
+   
+        <p class="image-id">Id: {{picture.id}}</p>
+        
+
+        <img 
+            src="{{picture.image}}" 
+            alt="" 
+        >
+        <p>Name: {{picture.name}}</p>
+
+        <a routerLink="/detail/{{picture.id}}" class="btn edit-button">
+            Edit 
+        </a>
+
+        <div class="btn delete-button" (click)="delete(picture)">
+            &times;
+        </div>
+
+    </li>
+
+</ul>
+

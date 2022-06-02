@@ -1,0 +1,22 @@
+
+<div class="container">
+
+    <app-message class="item"></app-message>
+
+    <ul id="animal-container">
+
+        <li *ngFor="let animal of animals" class="animal-item">
+
+            <!-- <p>{{ animal.name }}</p> -->
+
+            <img src="{{animal.image}}" alt="" (click)="animalClick(animal)">
+
+        </li>
+    </ul>
+
+    <span class="info-point item">
+        <h3>Best score: {{ bestScore }}</h3>
+        <h3>Score: {{ score }}</h3>
+    </span>
+
+</div>

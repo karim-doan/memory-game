@@ -1,0 +1,25 @@
+
+
+<div class="messages-container">
+    <div class="messages">
+
+        <div  *ngIf="messageService.messages.length">
+        
+            <h3>Messages</h3>
+        
+            <button 
+                type="button" 
+                class="clear"
+                (click)="messageService.clear()"
+            >
+                Clear messages
+            </button>
+            
+            <div id="showMessage">
+                <div  class="" *ngFor='let message of messageService.messages.reverse()'> {{message}} </div>
+            </div>
+        
+        </div>
+    </div>
+    
+</div>
